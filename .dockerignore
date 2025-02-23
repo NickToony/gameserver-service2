@@ -1,0 +1,8 @@
+database
+dist
+.vscode
+http
+node_modules
+*.log
+*.md
+.git
