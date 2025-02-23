@@ -3,6 +3,6 @@ export interface ServerDto {
   name: string;
   currentPlayers: number;
   maxPlayers: number;
-  metadata: Map<string, string>;
+  metadata: { [key: string]: string };
   password: string;
 }

@@ -3,7 +3,7 @@ export interface ServerResponse {
   name: string;
   currentPlayers: number;
   maxPlayers: number;
-  meta: Map<string, string>;
+  meta: { [key: string]: string };
 }
 
 export interface GetServersResponse {

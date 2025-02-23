@@ -17,7 +17,7 @@ export class CreateServerRequest {
   @ApiProperty()
   @IsObject()
   @IsOptional()
-  metadata?: Map<string, string>;
+  metadata?: { [key: string]: string };
 
   /**
    *  Legacy fields.

@@ -36,7 +36,7 @@ export class ServerService {
     name: string,
     currentPlayers: number,
     maxPlayers: number,
-    metadata?: Map<string, string>,
+    metadata?: { [key: string]: string },
     ip?: string,
     port?: string,
   ): Promise<ServerDto> {
@@ -65,7 +65,7 @@ export class ServerService {
     name: string,
     currentPlayers: number,
     maxPlayers: number,
-    metadata?: Map<string, string>,
+    metadata?: { [key: string]: string },
     ip?: string,
     port?: string,
   ): Promise<ServerDto | undefined> {
@@ -74,6 +74,7 @@ export class ServerService {
       return undefined;
     }
 
+    console.log(this.combineLegacyMetadata(metadata, ip, port));
     await this.serverRepository.update(id, {
       name,
       currentPlayers,
@@ -96,16 +97,16 @@ export class ServerService {
   }
 
   combineLegacyMetadata(
-    metadata?: Map<string, string>,
+    metadata?: { [key: string]: string },
     ip?: string,
     port?: string,
-  ): Map<string, string> {
-    const result = metadata ? metadata : new Map<string, string>();
+  ): { [key: string]: string } {
+    const result = metadata ? metadata : {};
     if (ip) {
-      result.set('ip', ip);
+      result['ip'] = ip;
     }
     if (port) {
-      result.set('port', port);
+      result['port'] = port;
     }
     return result;
   }

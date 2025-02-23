@@ -5,10 +5,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { GameModel } from 'src/common/database/models/game.model';
 import { ServerModel } from 'src/common/database/models/server.model';
 import { ServerService } from './services/server.service';
+import { CleanupWorker } from './workers/cleanup.worker';
 
 @Module({
   controllers: [LegacyApiController],
   imports: [DatabaseModule, TypeOrmModule.forFeature([GameModel, ServerModel])],
-  providers: [ServerService],
+  providers: [ServerService, CleanupWorker],
 })
 export class LegacyAPIModule {}

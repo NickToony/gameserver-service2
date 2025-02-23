@@ -64,6 +64,8 @@ export class LegacyApiController {
       payload.currentPlayers,
       payload.maxPlayers,
       payload.metadata,
+      payload.ip,
+      payload.port,
     );
     return {
       success: true,
@@ -90,6 +92,8 @@ export class LegacyApiController {
       payload.currentPlayers,
       payload.maxPlayers,
       payload.metadata,
+      payload.ip,
+      payload.port,
     );
 
     return {

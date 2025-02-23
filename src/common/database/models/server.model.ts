@@ -23,7 +23,7 @@ export class ServerModel {
   maxPlayers: number;
 
   @Column('json', { nullable: true })
-  metadata?: Map<string, string>;
+  metadata?: { [key: string]: string };
 
   @Column()
   password: string;
