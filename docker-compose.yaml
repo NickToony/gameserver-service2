@@ -1,0 +1,21 @@
+version: "3.5"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: gameserver_service_postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: gameserver_service
+    volumes:
+      - ./database:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  redis:
+    image: redis:latest
+    container_name: gameserver_service_redis
+    ports:
+      - "6379:6379"
