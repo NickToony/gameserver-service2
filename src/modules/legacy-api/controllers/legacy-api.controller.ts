@@ -56,8 +56,6 @@ export class LegacyApiController {
       throw new NotFoundException();
     }
 
-    console.log(payload);
-
     const server = await this.serverService.addServer(
       game.id,
       payload.name,

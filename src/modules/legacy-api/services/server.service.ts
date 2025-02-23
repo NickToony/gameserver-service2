@@ -74,7 +74,6 @@ export class ServerService {
       return undefined;
     }
 
-    console.log(this.combineLegacyMetadata(metadata, ip, port));
     await this.serverRepository.update(id, {
       name,
       currentPlayers,
