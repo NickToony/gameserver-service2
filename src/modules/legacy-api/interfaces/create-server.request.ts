@@ -8,11 +8,11 @@ export class CreateServerRequest {
 
   @ApiProperty()
   @IsNumber()
-  currentPlayers: number;
+  current_players: number;
 
   @ApiProperty()
   @IsNumber()
-  maxPlayers: number;
+  max_players: number;
 
   @ApiProperty()
   @IsObject()

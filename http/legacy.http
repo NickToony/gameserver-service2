@@ -10,8 +10,8 @@ Content-Type: application/json
 
 {
     "name": "My Lovely Server",
-    "currentPlayers": 0,
-    "maxPlayers": 10,
+    "current_players": 0,
+    "max_players": 10,
     "ip": "127.0.0.1",
     "port": "25565"
 }
@@ -24,9 +24,23 @@ Content-Type: application/json
 
 {
     "name": "My Lovely Server",
-    "currentPlayers": 5,
-    "maxPlayers": 10,
+    "current_players": 5,
+    "max_players": 10,
     "ip": "127.0.0.1",
     "port": "25565",
     "password": "{{CreateServer.response.body.password}}"
+}
+
+
+
+### Test Server
+POST https://gameservers.nick-hope.co.uk/api/game/KjyUfbGuOsTSq2cbP05M7hiwnwkgtLqzsjanzNN5cnbJfn7uGrOQ7DeaLqWo?page=1
+Content-Type: application/json
+
+{
+    "name": "My Lovely Server",
+    "currentPlayers": 0,
+    "maxPlayers": 10,
+    "ip": "127.0.0.1",
+    "port": "25565"
 }

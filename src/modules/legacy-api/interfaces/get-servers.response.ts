@@ -1,17 +1,17 @@
 export interface ServerResponse {
   id: number;
   name: string;
-  currentPlayers: number;
-  maxPlayers: number;
+  current_players: number;
+  max_players: number;
   meta: { [key: string]: string };
 }
 
 export interface GetServersResponse {
   data: ServerResponse[];
   total: number;
-  perPage: number;
-  currentPage: number;
-  lastPage: number;
+  per_page: number;
+  current_page: number;
+  last_page: number;
   from: number;
   to: number;
 }
