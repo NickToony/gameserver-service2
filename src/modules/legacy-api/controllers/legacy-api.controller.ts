@@ -28,7 +28,10 @@ export class LegacyApiController {
       throw new NotFoundException();
     }
 
-    const servers = await this.serverService.getPaginatedServers(game.id, page);
+    const servers = await this.serverService.getPaginatedServers(
+      game.id,
+      page ? page - 1 : undefined,
+    );
     return {
       data: servers.data.map((server) => ({
         id: server.id,
