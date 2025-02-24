@@ -41,11 +41,11 @@ export class LegacyApiController {
         meta: server.metadata,
       })),
       per_page: servers.pageSize,
-      current_page: servers.page,
-      last_page: servers.totalPages,
+      current_page: servers.page + 1,
+      last_page: servers.totalPages + 1,
       total: servers.totalRows,
-      from: servers.page * servers.pageSize,
-      to: (servers.page + 1) * servers.pageSize,
+      from: (servers.page + 1) * servers.pageSize,
+      to: (servers.page + 2) * servers.pageSize,
     };
   }
 
