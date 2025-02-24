@@ -23,6 +23,9 @@ async function bootstrap() {
   const port = process.env.PORT ?? 3000;
   console.log('Listening on port', port);
 
+  // We need to allow games hosted on other domains to access our API
+  app.enableCors();
+
   await app.listen(port);
 }
 bootstrap();
