@@ -4,4 +4,6 @@ export class CreateServerResponse {
   password: string;
 
   id: string;
+
+  errors: { [key: string]: string[] };
 }

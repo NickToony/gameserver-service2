@@ -72,6 +72,7 @@ export class LegacyApiController {
       success: true,
       id: server.id.toString(),
       password: server.password,
+      errors: {},
     };
   }
 
@@ -99,6 +100,7 @@ export class LegacyApiController {
 
     return {
       success: !!server,
+      errors: {},
     };
   }
 }
