@@ -1,5 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNumber, IsObject, IsOptional, IsString } from 'class-validator';
+import {
+  IsNumberString,
+  IsObject,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 
 export class CreateServerRequest {
   @ApiProperty()
@@ -7,12 +12,12 @@ export class CreateServerRequest {
   name: string;
 
   @ApiProperty()
-  @IsNumber()
-  current_players: number;
+  @IsNumberString()
+  current_players: string;
 
   @ApiProperty()
-  @IsNumber()
-  max_players: number;
+  @IsNumberString()
+  max_players: string;
 
   @ApiProperty()
   @IsObject()
