@@ -70,7 +70,7 @@ export class LegacyApiController {
     );
     return {
       success: true,
-      id: server.id,
+      id: server.id.toString(),
       password: server.password,
     };
   }

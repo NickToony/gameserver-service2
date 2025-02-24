@@ -3,5 +3,5 @@ export class CreateServerResponse {
 
   password: string;
 
-  id: number;
+  id: string;
 }
